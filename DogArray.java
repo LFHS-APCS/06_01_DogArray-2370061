@@ -6,7 +6,15 @@ public class DogArray
      */
     public static int getYoungestIndex(Dog[] dogs)
     {
-        return -1;
+        int index = 0;
+        for(int i = 1; i < dogs.length; i++){
+          if(dogs[i].getAge() < dogs[index].getAge()){
+            index = i;
+          }
+        }
+        return index;
+        
+       // return -1;
     }
 
     /**
@@ -14,6 +22,14 @@ public class DogArray
      */
     public static String getYoungestName(Dog[] dogs)
     {
-        return "";
+      int index = 0;
+      String youngestName = "";
+      for(int i = 1; i < dogs.length; i++){
+        if(dogs[i].getAge() < dogs[index].getAge()){
+          youngestName = dogs[i].getName();
+        }
+      }
+        return youngestName;
+       // return "";
     }
 }
